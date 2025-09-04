@@ -1,0 +1,233 @@
+body {
+    background: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.birthday-text {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.5rem;
+    color: #b2dfdb;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+    z-index: 2;
+    user-select: none;
+}
+
+.cake {
+    position: relative;
+    width: 220px;
+    height: 260px;
+    margin-top: 120px;
+    z-index: 1;
+}
+
+.layer {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+.layer-bottom {
+    bottom: 30px;
+    width: 200px;
+    height: 60px;
+    background: #ffe066;
+    z-index: 2;
+    border: 4px solid #bdbdbd;
+}
+
+.layer-middle {
+    bottom: 90px;
+    width: 140px;
+    height: 50px;
+    background: #ffe066;
+    z-index: 3;
+    border: 4px solid #f06292;
+}
+
+.layer-top {
+    bottom: 140px;
+    width: 80px;
+    height: 40px;
+    background: #ffe066;
+    z-index: 4;
+    border: 4px solid #64b5f6;
+}
+
+/* Drips */
+.drip {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 22px;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.drip-bottom {
+    top: 55px;
+    background: none;
+    border-bottom: 10px solid #b39ddb;
+    border-radius: 0 0 50% 50%/0 0 100% 100%;
+    box-shadow: 0 10px 0 0 #b39ddb;
+}
+
+.drip-middle {
+    top: 40px;
+    background: none;
+    border-bottom: 10px solid #f06292;
+    border-radius: 0 0 50% 50%/0 0 100% 100%;
+    box-shadow: 0 10px 0 0 #f06292;
+}
+
+.drip-top {
+    top: 30px;
+    background: none;
+    border-bottom: 10px solid #64b5f6;
+    border-radius: 0 0 50% 50%/0 0 100% 100%;
+    box-shadow: 0 10px 0 0 #64b5f6;
+}
+
+/* Plate */
+.plate {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 220px;
+    height: 20px;
+    background: #bdbdbd;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px #888;
+    z-index: 1;
+}
+
+/* Candle */
+.candles {
+    position: absolute;
+    left: 50%;
+    bottom: 170px;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+}
+
+.candle {
+    width: 14px;
+    height: 38px;
+    background: #4fc3f7;
+    border-radius: 7px;
+    position: relative;
+    margin: 0 auto;
+    box-shadow: 0 0 0 2px #388e3c inset;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: visible;
+}
+
+.stripe {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 6px;
+    height: 38px;
+    background: repeating-linear-gradient(
+        135deg,
+        #388e3c 0 6px,
+        #4fc3f7 6px 12px
+    );
+    transform: translateX(-50%);
+    border-radius: 3px;
+    z-index: 2;
+}
+
+.flame {
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 24px;
+    background: radial-gradient(ellipse at center, #ffd700 60%, #ff5252 100%);
+    border-radius: 50% 50% 50% 50%/60% 60% 40% 40%;
+    opacity: 0.9;
+    animation: flame-flicker 1s infinite alternate;
+    z-index: 20;
+}
+
+@keyframes flame-flicker {
+    0% { transform: translateX(-50%) scaleY(1); opacity: 0.9; }
+    100% { transform: translateX(-50%) scaleY(1.1); opacity: 1; }
+}
+
+/* Confetti */
+.confetti {
+    position: absolute;
+    width: 120px;
+    height: 16px;
+    border-radius: 8px;
+    opacity: 0.7;
+    z-index: 0;
+}
+
+.confetti1 {
+    top: 30px; left: 80px;
+    background: #43e6a3;
+    transform: rotate(-20deg);
+}
+.confetti2 {
+    top: 40px; right: 80px;
+    background: #b39ddb;
+    transform: rotate(25deg);
+}
+.confetti3 {
+    top: 160px; left: 30px;
+    background: #f06292;
+    transform: rotate(-10deg);
+}
+.confetti4 {
+    bottom: 60px; right: 40px;
+    background: #b39ddb;
+    transform: rotate(20deg);
+}
+.confetti5 {
+    bottom: 40px; left: 60px;
+    background: #43e6a3;
+    transform: rotate(-25deg);
+}
+.confetti6 {
+    top: 120px; right: 180px;
+    background: #f06292;
+    transform: rotate(10deg);
+}
+
+/* Hover effect */
+.cake:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px 10px #ffd700;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.layer:hover,
+.drip:hover {
+    filter: brightness(1.1);
+    transition: filter 0.3s;
+}
+.candle:hover .flame {
+    opacity: 1;
+    filter: drop-shadow(0 0 10px #ffd700);
+}
